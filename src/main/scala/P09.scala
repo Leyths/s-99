@@ -16,7 +16,7 @@ object P09 {
   }
 
   def partition(list: List[Symbol]): List[List[Symbol]] = {
-    val lists = list.partition(v => v == list.head)
-    lists._1 :: pack(lists._2)
+    val droppedList = list.dropWhile(v => v == list.head)
+    List.fill(list.size - droppedList.size)(list.head) :: pack(droppedList)
   }
 }
