@@ -16,8 +16,8 @@ object P16 {
     list match {
       case _ if toDrop > list.size => list
       case _ =>
-        val lists = list.splitAt(toDrop)
-        drop(n, lists._1.dropRight(1).++(lists._2), count + 1)
+        val (head, tail) = list.splitAt(toDrop)
+        drop(n, head.dropRight(1).++(tail), count + 1)
     }
   }
 }
