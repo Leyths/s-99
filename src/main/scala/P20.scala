@@ -12,7 +12,7 @@ object P20 {
     println(removeAt(1, List('a, 'b, 'c, 'd)))
   }
 
-  def removeAt(k : Int, list : List[Symbol]) : (List[Symbol], Symbol) = {
+  def removeAt[A](k : Int, list : List[A]) : (List[A], A) = {
     val (a, b) = list.splitAt(k)
     (a ::: b.drop(1), b.head)
   }

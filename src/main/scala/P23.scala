@@ -14,7 +14,7 @@ object P23 {
     println(randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)))
   }
 
-  def randomSelect(count : Int, list : List[Symbol]) : List[Symbol] = (count, list) match {
+  def randomSelect[A](count : Int, list : List[A]) : List[A] = (count, list) match {
     case (1, _) => List(P20.removeAt(Random.nextInt(list.size), list)._2)
     case _ =>
       val (a, b) = P20.removeAt(Random.nextInt(list.size), list)
